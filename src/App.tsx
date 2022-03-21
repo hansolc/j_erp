@@ -1,4 +1,5 @@
 import React from 'react';
+import { RecoilRoot } from 'recoil';
 import { createGlobalStyle } from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from './theme';
@@ -62,12 +63,14 @@ function App() {
   
   return (
     <>
-      <ThemeProvider theme={lightTheme}>
-        <GlobalStyle/>
-        <div>
-          hello world
-        </div>
-      </ThemeProvider>
+      <RecoilRoot>
+        <ThemeProvider theme={lightTheme}>
+          <GlobalStyle />
+          <div>
+            hello world
+          </div>
+        </ThemeProvider>
+      </RecoilRoot>
     </>
   );
 }
