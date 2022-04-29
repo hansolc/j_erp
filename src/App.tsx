@@ -3,6 +3,7 @@ import { RecoilRoot } from 'recoil';
 import { createGlobalStyle } from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from './theme';
+import Router from './Router';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
@@ -30,6 +31,9 @@ const GlobalStyle = createGlobalStyle`
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+  }
+  html, body, #root{
+    height: 100%;
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure, 
@@ -66,9 +70,7 @@ function App() {
       <RecoilRoot>
         <ThemeProvider theme={lightTheme}>
           <GlobalStyle />
-          <div>
-            hello world
-          </div>
+          <Router />
         </ThemeProvider>
       </RecoilRoot>
     </>
