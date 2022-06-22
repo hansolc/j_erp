@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
+import { useQuery } from 'react-query';
+import { login } from '../apis';
 
 const Container = styled.main`
     width: 100%;
@@ -30,8 +32,9 @@ interface IForm {
 function Login(){
     const { register, handleSubmit, watch, resetField, formState: { errors } } = useForm<IForm>();
     const onSubmit = ({username, password}: IForm) => {
+        
         // Add condition if password is incorrect
-        resetField("password");
+        // resetField("password");
     };
 
     return (
